@@ -1,0 +1,116 @@
+body{
+    background-color:#0a0344;
+}
+
+.container-fluid{
+    background-color: #FAFAFA;
+}
+
+.form-holder{
+    margin-right:10px;
+    width: 550px;
+    border: 2px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+	margin: 0px -80px;
+	margin-top: 5%;
+}
+
+h1{
+	font-size:2.5rem;
+	margin-bottom: 25px;
+}
+
+button{
+ 	display: block;
+	background: #00745a;
+	color: white;
+	width: 100%;
+	height: 45px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-top: 25px;
+}
+
+button:hover{
+	background: #0e2e86;
+}
+
+.form-control {
+	display: block;
+	border: 2px solid #ccc;
+	width: 100%;
+	height: 45px;
+	padding: 10px;
+	margin: 5px auto;
+	border-radius: 5px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+b {
+	font-size:3rem;
+	color: yellow;
+}
+
+/* custom.css */
+.nav-link {
+	margin-top: 10px;
+}
+
+.nav-link:hover {
+    color: #23282D; 
+}
+
+.custom-button {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.3s;
+    color: #fff;
+    background: #23282D;
+    margin-top: 15px;
+}
+
+.custom-button:hover {
+    background: #fff;
+    color: #23282D;
+    border: 2px solid #fff;
+}
+
+.custom-subbutton {
+    display: block;
+    padding: 5px 15px 10px 30px;
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    transition: all 0.3s;
+    color: #fff;
+    background: #6c6c6c;
+    margin-top: 15px;
+}
+
+.custom-subbutton:hover {
+    background: #fff;
+    color: #23282D;
+    border: 2px solid #fff;
+}
+
+.dropdown2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: inherit;
+    padding-right: inherit;
+    padding-bottom: inherit;
+    padding-left: inherit;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}

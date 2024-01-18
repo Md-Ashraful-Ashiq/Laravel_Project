@@ -1,0 +1,89 @@
+@extends('layouts.app')
+@section('content')
+
+<head>
+    <!-- Add Bootstrap-select CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+
+    <!-- Add jQuery (if not already included) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Add Bootstrap-select JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/js/bootstrap-select.min.js"></script>
+
+    <!-- Initialize Bootstrap-select -->
+    <script>
+        $(document).ready(function() {
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+</head>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4 offset-md-4">
+            <div class="card form-holder">
+                <div class="card-body">
+                    <h1>Registration</h1>
+
+                    @if (Session::has('error'))
+                    <p class="text-danger">{{ Session::get('error') }}</p>
+                    @endif
+
+                    <form action="{{ route('register') }}" method="post">
+                        @csrf
+                        @method('post')
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="name" />
+                            @if ($errors->has('name'))
+                            <p class="text-danger">{{ $errors->first('name') }}</p>
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                            @if ($errors->has('email'))
+                            <p class="text-danger">{{ $errors->first('email') }}</p>
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            @if ($errors->has('password'))
+                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select name="role" class="selectpicker form-control" data-style="border" data-width="100%" data-live-search="true">
+                                @foreach($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->roleName }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="row">
+                    <div class="col-8 text-left">
+                        <a href="#" class="btn btn-link">Forgot Password</a>
+                    </div>
+                </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@endsection
